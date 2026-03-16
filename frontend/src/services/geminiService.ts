@@ -1,7 +1,13 @@
 
 import { GoogleGenAI, Type } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+// FIXED ✅
+const ai = new GoogleGenAI({ 
+  apiKey: process.env.API_KEY || 
+          process.env.GEMINI_API_KEY || 
+          (import.meta as any).env?.VITE_API_KEY || 
+          (import.meta as any).env?.API_KEY || ''
+});
 
 export const summarizeNote = async (content: string) => {
   const response = await ai.models.generateContent({
