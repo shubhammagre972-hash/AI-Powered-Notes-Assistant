@@ -3,10 +3,7 @@ import { GoogleGenAI, Type } from "@google/genai";
 
 // FIXED ✅
 const ai = new GoogleGenAI({ 
-  apiKey: process.env.API_KEY || 
-          process.env.GEMINI_API_KEY || 
-          (import.meta as any).env?.VITE_API_KEY || 
-          (import.meta as any).env?.API_KEY || ''
+  apiKey: (import.meta as any).env.VITE_API_KEY || ''
 });
 
 export const summarizeNote = async (content: string) => {
