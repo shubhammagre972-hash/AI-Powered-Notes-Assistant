@@ -5,7 +5,7 @@ const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
 
 export const summarizeNote = async (content: string) => {
   const response = await ai.models.generateContent({
-    model: 'gemini-3-flash-preview',
+    model: 'gemini-1.5-flash',
     contents: `Summarize the following lecture notes into key bullet points and a concise overview:\n\n${content}`,
     config: {
       temperature: 0.7,
