@@ -18,7 +18,7 @@ export const summarizeNote = async (content: string) => {
 
 export const categorizeNote = async (content: string) => {
   const response = await ai.models.generateContent({
-    model: 'gemini-3-flash-preview',
+    model: 'gemini-2.0-flash',
     contents: `Analyze the following content and suggest exactly 3 relevant academic categories or tags. Content: \n\n${content}`,
     config: {
       responseMimeType: 'application/json',
@@ -44,7 +44,7 @@ export const categorizeNote = async (content: string) => {
 
 export const getSuggestedResources = async (topic: string, rating: number) => {
   const response = await ai.models.generateContent({
-    model: 'gemini-3-flash-preview',
+    model: 'gemini-2.0-flash',
     contents: `The user has a difficulty level of ${rating}/5 (where 1 is low understanding) in the topic: "${topic}". Suggest 3 high-quality learning resources (videos, articles, or books).`,
     config: {
       responseMimeType: 'application/json',
