@@ -1,9 +1,7 @@
 
 import { GoogleGenAI, Type } from "@google/genai";
-
-// FIXED ✅
 const ai = new GoogleGenAI({ 
-  apiKey: (import.meta as any).env.VITE_API_KEY || ''
+  apiKey: process.env.API_KEY || ''
 });
 
 export const summarizeNote = async (content: string) => {
