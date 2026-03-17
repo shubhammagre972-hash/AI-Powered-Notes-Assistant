@@ -1,4 +1,5 @@
 import { GoogleGenAI, Type } from "@google/genai";
+console.log('API KEY:', import.meta.env.VITE_API_KEY)
 
 const ai = new GoogleGenAI(import.meta.env.VITE_API_KEY || '');
 
