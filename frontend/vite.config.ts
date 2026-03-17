@@ -14,3 +14,13 @@ export default defineConfig({
     }
   }
 });
+```
+
+Commit changes ✅
+
+---
+
+### Step 6 — Redeploy Vercel Without Cache!
+```
+Deployments → 3 dots → Redeploy
+Uncheck "Use existing Build Cache" ✅
